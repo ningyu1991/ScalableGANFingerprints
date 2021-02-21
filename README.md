@@ -15,4 +15,6 @@ Over the past six years, deep generative models have achieved a qualitatively ne
 - Linux
 - NVIDIA GPU + CUDA 10.0 + CuDNN 7.5
 - Python 3.6
-- To install the other Python dependencies, run `pip3 install -r requirements.txt`
+- tensorflow-gpu 1.14
+- To install the other Python dependencies, run `pip3 install -r requirements.txt`.
+
