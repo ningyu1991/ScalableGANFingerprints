@@ -1,0 +1,6 @@
+numpy
+scipy
+Pillow
+scikit-image
+scikit-learn
+six
