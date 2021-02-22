@@ -17,8 +17,32 @@ Over the past six years, deep generative models have achieved a qualitatively ne
 - To install the other Python dependencies, run `pip3 install -r requirements.txt`.
 
 ## Datasets
-- We experiment on six datasets. Download and unzip images into a folder.
-  - [CelebA aligned and cropped images](https://drive.google.com/file/d/0B7EVK8r0v71pZjFTYXZWM3FlRnM/view?usp=sharing). We use the first 30k images at 128x128 for training.
-  - [LSUN Bedroom](https://github.com/fyu/lsun). We use the first 30k images at 128x128 for training..
-  - [LSUN Cat](http://dl.yf.io/lsun/objects/). We use the first 50k images at 256x256 for training..
+We experiment on three datasets:
+- [CelebA](https://drive.google.com/open?id=0B7EVK8r0v71pWEZsZE9oNnFzTm8). We use the first 30k images and crop them centered at (x,y) = (89,121) with size 128x128. To prepare the dataset, first download and unzip the aligned png images to `celeba/Img/`, then run
+  ```
+  python3 dataset_tool.py create_celeba \
+  datasets/celeba_align_png_cropped_30k \
+  celeba/Img/img_align_celeba_png \
+  --num_images 30000
+  ```
+  where `datasets/celeba_align_png_cropped_30k` is the output directory containing the prepared data format that enables efficient streaming for our training, and `celeba/Img/img_align_celeba_png` is the input directory containing CelebA png files.
+  
+- [LSUN Bedroom](https://github.com/fyu/lsun). Similarly, we use the first 30k training images and resize them to 128x128. To prepare the dataset, first download and extract the images to `lsun_bedroom_train`, then run
+  ```
+  python3 dataset_tool.py create_from_images \
+  datasets/lsun_bedroom_train_30k_128x128 \
+  lsun_bedroom_train \
+  --shuffle 0 \
+  --num_images 30000 \
+  --resolution 128
+  ```
 
+- [LSUN Cat](http://dl.yf.io/lsun/objects/). Similarly, we use the first 50k images at the original 256x256 size. To prepare the dataset, first download and extract the images to `lsun_cat`, then run
+  ```
+  python3 dataset_tool.py create_from_images \
+  datasets/lsun_cat_50k_256x256 \
+  lsun_cat \
+  --shuffle 0 \
+  --num_images 50000 \
+  --resolution 256
+  ```
