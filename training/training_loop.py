@@ -175,9 +175,9 @@ def training_loop(
     grid_fakes_arbitrary = Gs.run(grid_latents, grid_labels, grid_watermarks, is_validation=True, minibatch_size=sched.minibatch_gpu)
     grid_fakes_latents_same = Gs.run(grid_latents_same, grid_labels, grid_watermarks, is_validation=True, minibatch_size=sched.minibatch_gpu)
     grid_fakes_watermarks_same = Gs.run(grid_latents, grid_labels, grid_watermarks_same, is_validation=True, minibatch_size=sched.minibatch_gpu)
-    misc.save_image_grid(grid_fakes_arbitrary, dnnlib.make_run_dir_path('fakes_arbitrary_init.png'), drange=drange_net, grid_size=grid_size)
-    misc.save_image_grid(grid_fakes_latents_same, dnnlib.make_run_dir_path('fakes_latents_same_init.png'), drange=drange_net, grid_size=grid_size)
-    misc.save_image_grid(grid_fakes_watermarks_same, dnnlib.make_run_dir_path('fakes_watermarks_same_init.png'), drange=drange_net, grid_size=grid_size)
+    misc.save_image_grid(grid_fakes_arbitrary, dnnlib.make_run_dir_path('fakes-arbitrary-init.png'), drange=drange_net, grid_size=grid_size)
+    misc.save_image_grid(grid_fakes_latents_same, dnnlib.make_run_dir_path('fakes-latents-same-init.png'), drange=drange_net, grid_size=grid_size)
+    misc.save_image_grid(grid_fakes_watermarks_same, dnnlib.make_run_dir_path('fakes-watermarks-same-init.png'), drange=drange_net, grid_size=grid_size)
 
     # Setup training inputs.
     print('Building TensorFlow graph...')
@@ -358,9 +358,9 @@ def training_loop(
                 grid_fakes_arbitrary = Gs.run(grid_latents, grid_labels, grid_watermarks, is_validation=True, minibatch_size=sched.minibatch_gpu)
                 grid_fakes_latents_same = Gs.run(grid_latents_same, grid_labels, grid_watermarks, is_validation=True, minibatch_size=sched.minibatch_gpu)
                 grid_fakes_watermarks_same = Gs.run(grid_latents, grid_labels, grid_watermarks_same, is_validation=True, minibatch_size=sched.minibatch_gpu)
-                misc.save_image_grid(grid_fakes_arbitrary, dnnlib.make_run_dir_path('fakes_arbitrary%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
-                misc.save_image_grid(grid_fakes_latents_same, dnnlib.make_run_dir_path('fakes_latents_same%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
-                misc.save_image_grid(grid_fakes_watermarks_same, dnnlib.make_run_dir_path('fakes_watermarks_same%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
+                misc.save_image_grid(grid_fakes_arbitrary, dnnlib.make_run_dir_path('fakes-arbitrary-%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
+                misc.save_image_grid(grid_fakes_latents_same, dnnlib.make_run_dir_path('fakes-latents-same-%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
+                misc.save_image_grid(grid_fakes_watermarks_same, dnnlib.make_run_dir_path('fakes-watermarks-same-%06d.png'  % (cur_nimg // 1000)), drange=drange_net, grid_size=grid_size)
             if network_snapshot_ticks is not None and (cur_tick % network_snapshot_ticks == 0 or done):
                 pkl = dnnlib.make_run_dir_path('network-snapshot-%06d.pkl' % (cur_nimg // 1000))
                 misc.save_pkl((E, G, D, Gs), pkl)
