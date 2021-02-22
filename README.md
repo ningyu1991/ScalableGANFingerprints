@@ -51,14 +51,14 @@ We experiment on three datasets:
 - Run, e.g.,
   ```
   python3 run_training.py --data-dir=datasets --config=config-e-Gskip-Dresnet --num-gpus=2 \
-  --metrics=fid_watermark_accuracy_30k \
   --dataset=celeba_align_png_cropped_30k \
   --result-dir=results/celeba_align_png_cropped_30k \
   --watermark-size=128 \
-  --res-modulated-range=4-128
+  --res-modulated-range=4-128 \
+  --metrics=fid_watermark_accuracy_30k
   ```
   where
-  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/metric-fid_watermark_accuracy_30k.txt`.
   - `result-dir` contains (1) model snapshots `network-snapshot-*.pkl`, (2) arbitrary generated samples in `fakes_arbitrary*.png`, (3) generated samples in `fakes_watermarks_same*.png` with arbitrary latent code and the same watermark (fingerprint), (4) generated samples in `fakes_latents_same*.png` with the same latent code and arbitrary watermarks (fingerprints), and (5) log files.
   - `watermark-size`: The number of bits of embedded watermark (fingerprint).
-  - `res-modulated-range`: At which resolutions of generator layers to modulate watermark (fingerprint). 
+  - `res-modulated-range`: At which resolutions of generator layers to modulate watermark (fingerprint). **Our experiments show modulating at all resolutions achieves the optimal performance in general.**
+  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/metric-fid_watermark_accuracy_30k.txt`.
