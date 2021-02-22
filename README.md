@@ -64,4 +64,7 @@ We experiment on three datasets:
   - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/metric-fid_watermark_accuracy_30k.txt`.
 
 ## Pre-trained models
-- The pre-trained fingerprinted GAN models can be downloaded from:
+- The pre-trained scalable GAN fingerprinting models can be downloaded from:
+  - [30k CelebA 128x128](https://drive.google.com/file/d/1ODFds30TIGO-qRl1vbMVsxvivP1loHOz/view?usp=sharing)
+  - [30k LSUN Bedroom 128x128](https://drive.google.com/file/d/1legqK4V9nUrY1_m0iKG1-fMGg6Rixjfn/view?usp=sharing)
+  - [50k LSUN Cat 256x256](https://drive.google.com/file/d/1I9ZFVwK6OKBY945flRaLnf7CAD8Q0Ejo/view?usp=sharing)
