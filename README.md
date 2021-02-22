@@ -58,7 +58,7 @@ We experiment on three datasets:
   --metrics=fid_watermark_accuracy_30k
   ```
   where
-  - `result-dir` contains model snapshots `network-snapshot-*.pkl`, real samples `reals.png`, randomly generated samples at different snapshots `fakes-arbitrary-*.png`, randomly generated samples `fakes-watermarks-same-*.png` with arbitrary latent code and the same watermark (fingerprint), randomly generated samples `fakes-latents-same-*.png` with the same latent code and arbitrary watermarks (fingerprints), log file `log.txt`, tensorboard plots `events.out.tfevents.*`, and so on.
+  - `result-dir` contains model snapshots `network-snapshot-*.pkl`, real samples `reals.png`, randomly generated samples `fakes-arbitrary-*.png` at different snapshots, randomly generated samples `fakes-watermarks-same-*.png` at different snapshots with arbitrary latent code and the same watermark (fingerprint), randomly generated samples `fakes-latents-same-*.png` at different snapshots with the same latent code and arbitrary watermarks (fingerprints), log file `log.txt`, tensorboard plots `events.out.tfevents.*`, and so on.
   - `watermark-size`: The number of bits of embedded watermark (fingerprint).
   - `res-modulated-range`: At which resolutions of generator layers to modulate watermark (fingerprint). **Our experiments show modulating at all resolutions achieves the optimal performance in general.**
   - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/metric-fid_watermark_accuracy_30k.txt`.
