@@ -185,8 +185,8 @@ def main():
     parser.add_argument('--resume-pkl', help='Pre-trained network path" (default: %(default)s)', default=None, type=str)
 
     parser.add_argument('--watermark-size', help='Watermark dimensionality (default: %(default)s)', default=512, type=int)
-    parser.add_argument('--decoupleL2-weight', help='Weight for watermark decouple L2 loss (default: %(default)s)', default=20.0, type=float)
-    parser.add_argument('--latentsRecL2-weight', help='Weight for normal latent L2 reconstruction loss (default: %(default)s)', default=2.0, type=float)
+    parser.add_argument('--decoupleL2-weight', help='Weight for watermark decouple L2 loss (default: %(default)s)', default=2.0, type=float)
+    parser.add_argument('--latentsRecL2-weight', help='Weight for normal latent L2 reconstruction loss (default: %(default)s)', default=1.0, type=float)
     parser.add_argument('--watermarkCls-weight', help='Weight for onehot watermark classification loss (default: %(default)s)', default=2.0, type=float)
 
     parser.add_argument('--res-modulated-range', help='Working range for modulated_conv2d_layer() (default: %(default)s)', default='4-128', type=str)
