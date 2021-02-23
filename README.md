@@ -27,7 +27,7 @@ We experiment on three datasets:
   ```
   where `datasets/celeba_align_png_cropped_30k` is the output directory containing the prepared data format that enables efficient streaming for our training, and `celeba/Img/img_align_celeba_png` is the input directory containing CelebA png files.
   
-- [LSUN Bedroom](https://github.com/fyu/lsun). Similarly, we use the first 30k training images and resize them to 128x128. To prepare the dataset, first download and extract the images to `lsun_bedroom_train`, then run
+- [LSUN Bedroom](https://github.com/fyu/lsun). Similarly, we use the first 30k training images and resize them to 128x128. To prepare the dataset, first download and extract the png images to `lsun_bedroom_train`, then run
   ```
   python3 dataset_tool.py create_from_images \
   datasets/lsun_bedroom_train_30k_128x128 \
@@ -37,7 +37,7 @@ We experiment on three datasets:
   --resolution 128
   ```
 
-- [LSUN Cat](http://dl.yf.io/lsun/objects/). Similarly, we use the first 50k images at the original 256x256 size. To prepare the dataset, first download and extract the images to `lsun_cat`, then run
+- [LSUN Cat](http://dl.yf.io/lsun/objects/). Similarly, we use the first 50k images at the original 256x256 size. To prepare the dataset, first download and extract the png images to `lsun_cat`, then run
   ```
   python3 dataset_tool.py create_from_images \
   datasets/lsun_cat_50k_256x256 \
