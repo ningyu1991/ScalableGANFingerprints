@@ -61,7 +61,7 @@ We experiment on three datasets:
   - `result-dir` contains model snapshots `network-snapshot-*.pkl`, real samples `reals.png`, randomly generated samples `fakes-arbitrary-*.png` at different snapshots, randomly generated samples `fakes-watermarks-same-*.png` at different snapshots with arbitrary latent code and the same watermark (fingerprint), randomly generated samples `fakes-latents-same-*.png` at different snapshots with the same latent code and arbitrary watermarks (fingerprints), log file `log.txt`, tensorboard plots `events.out.tfevents.*`, and so on.
   - `watermark-size`: The number of bits of embedded watermark (fingerprint).
   - `res-modulated-range`: At which resolutions of generator layers to modulate watermark (fingerprint). **Our experiments show modulating at all resolutions achieves the optimal performance in general.**
-  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/*/metric-fid_watermark_accuracy_30k.txt`.
+  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance (FID) between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/*/metric-fid_watermark_accuracy_30k.txt`.
 
 ## Pre-trained models
 - The pre-trained scalable GAN fingerprinting models can be downloaded below. Put them under `models/`.
@@ -71,8 +71,19 @@ We experiment on three datasets:
   | [30k LSUN Bedroom 128x128](https://drive.google.com/file/d/1legqK4V9nUrY1_m0iKG1-fMGg6Rixjfn/view?usp=sharing) | 20.50 |     0.99     |
   | [50k LSUN Cat 256x256](https://drive.google.com/file/d/1I9ZFVwK6OKBY945flRaLnf7CAD8Q0Ejo/view?usp=sharing)     | 33.94 |     0.99     |
 
-## Generation
-- Run, e.g.,
+## Evaluation
+- **Fréchet inception distance (FID) and bitwise accuracy of watermark (fingerprint) detection**. Besides the evaluation for snapshots during training, we can also evaluate given any well-trained network and reference real images. Run, e.g.,
+  ```
+  python3 run_metrics.py --data-dir=datasets \
+  --metrics=fid_watermark_accuracy_30k \
+  --dataset=celeba_align_png_cropped_30k \
+  --network=models/celeba_align_png_cropped_30k_128x128.pkl \
+  --result-dir=eval/celeba_align_png_cropped_30k
+  ```
+  where
+  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance (FID) between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `eval/*/metric-fid_watermark_accuracy_30k.txt`.
+
+- **Image generation**. Run, e.g.,
   ```
   python3 run_generator.py generate-images \
   --network=models/celeba_align_png_cropped_30k_128x128.pkl \
@@ -86,18 +97,6 @@ We experiment on three datasets:
   - `seeds` indicates the random seeds to generated samples. E.g., `0-63` indicates using random seeds 0, ..., 63 to generate 64 samples in total.
   - `identical-latent` indicates using the same random latent code to generate samples or not.
   - `identical-watermark` indicates using the same random watermark (fingerprint) to generate samples or not.
-
-## Evaluation
-- Run, e.g.,
-  ```
-  python3 run_metrics.py --data-dir=datasets \
-  --metrics=fid_watermark_accuracy_30k \
-  --dataset=celeba_align_png_cropped_30k \
-  --network=models/celeba_align_png_cropped_30k_128x128.pkl \
-  --result-dir=eval/celeba_align_png_cropped_30k
-  ```
-  where
-  - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `eval/*/metric-fid_watermark_accuracy_30k.txt`.
 
 ## Citation
   ```
