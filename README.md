@@ -97,3 +97,20 @@ We experiment on three datasets:
   ```
   where
   - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `eval/*/metric-fid_watermark_accuracy_30k.txt`.
+
+## Citation
+  ```
+  @article{yu2021responsible,
+    title={Responsible Disclosure of Generative Models Using Scalable Fingerprinting},
+    author={Yu, Ning and Skripniuk, Vladislav and Chen, Dingfan and Davis, Larry and Fritz, Mario},
+    journal={arXiv e-prints},
+    year={2021}
+  }
+  ```
+
+## Acknowledgement
+- [Ning Yu](https://sites.google.com/site/ningy1991/) is patially supported by [Twitch Research Fellowship](https://blog.twitch.tv/en/2021/01/07/introducing-our-2021-twitch-research-fellows/).
+- Vladislav Skripniuk is partially supported by IMPRS scholarship from Max Planck Institute.
+- This work is also supported, in part, by the US Defense Advanced Research Projects Agency (DARPA) Media Forensics (MediFor) Program under FA87501620191 and Semantic Forensics (SemaFor) Program under HR001120C0124. Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the DARPA.
+- We acknowledge the Maryland Advanced Research Computing Center for providing computing resources.
+- We thank [David Jacobs](http://www.cs.umd.edu/~djacobs/), [Matthias Zwicker](http://www.cs.umd.edu/~zwicker/), [Abhinav Shrivastava](https://www.cs.umd.edu/~abhinav/), and [Yaser Yacoob](http://users.umiacs.umd.edu/~yaser/) for constructive advice in general.
