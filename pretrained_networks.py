@@ -73,8 +73,8 @@ def load_networks(path_or_gdrive_path):
 
     tflib.init_tf()
     with stream:
-        G, D, Gs = pickle.load(stream, encoding='latin1')
+        E, G, D, Gs = pickle.load(stream, encoding='latin1')
     _cached_networks[path_or_url] = G, D, Gs
-    return G, D, Gs
+    return E, G, D, Gs
 
 #----------------------------------------------------------------------------
