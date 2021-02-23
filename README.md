@@ -68,3 +68,20 @@ We experiment on three datasets:
   - [30k CelebA 128x128](https://drive.google.com/file/d/1ODFds30TIGO-qRl1vbMVsxvivP1loHOz/view?usp=sharing)
   - [30k LSUN Bedroom 128x128](https://drive.google.com/file/d/1legqK4V9nUrY1_m0iKG1-fMGg6Rixjfn/view?usp=sharing)
   - [50k LSUN Cat 256x256](https://drive.google.com/file/d/1I9ZFVwK6OKBY945flRaLnf7CAD8Q0Ejo/view?usp=sharing)
+  - Put them under `models/`.
+
+## Generation
+- Run, e.g.,
+  ```
+  python3 run_generator.py generate-images \
+  --network=models/celeba_align_png_cropped_30k_128x128.pkl \
+  --seeds=0-63 \
+  --identical-latent=False \
+  --identical-watermark=False \
+  --result-dir=generated_samples/celeba_align_png_cropped_30k_128x128
+  ```
+  where
+  - `seeds` indicates the random seeds to generated samples. E.g., `0-63` indicates using random seeds 0, ..., 63 to generate 64 samples in total.
+  - `identical-latent` indicates using the same (first) random latent code to generate samples.
+  - `identical-watermark` indicates using the same (first) random watermark (fingerprint) to generate samples.
+  - `result-dir` contains generated samples in png.
