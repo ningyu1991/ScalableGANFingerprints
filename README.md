@@ -64,11 +64,12 @@ We experiment on three datasets:
   - `metrics`: Evaluation metric(s). `fid_watermark_accuracy_30k` measures (1) the Fréchet inception distance between 30k randomly generated samples and 30k real samples, and (2) the bitwise accuracy of watermark (fingerprint) detection. The evaluation result is save in `results/*/metric-fid_watermark_accuracy_30k.txt`.
 
 ## Pre-trained models
-- The pre-trained scalable GAN fingerprinting models can be downloaded from:
-  - [30k CelebA 128x128](https://drive.google.com/file/d/1ODFds30TIGO-qRl1vbMVsxvivP1loHOz/view?usp=sharing)
-  - [30k LSUN Bedroom 128x128](https://drive.google.com/file/d/1legqK4V9nUrY1_m0iKG1-fMGg6Rixjfn/view?usp=sharing)
-  - [50k LSUN Cat 256x256](https://drive.google.com/file/d/1I9ZFVwK6OKBY945flRaLnf7CAD8Q0Ejo/view?usp=sharing)
-  - Put them under `models/`.
+- The pre-trained scalable GAN fingerprinting models can be downloaded below. Put them under `models/`.
+  | Our pre-trained model                                                                                          |  FID  | Fgpt bit acc |
+  |----------------------------------------------------------------------------------------------------------------|:-----:|:------------:|
+  | [30k CelebA 128x128](https://drive.google.com/file/d/1ODFds30TIGO-qRl1vbMVsxvivP1loHOz/view?usp=sharing)       | 11.50 |     0.99     |
+  | [30k LSUN Bedroom 128x128](https://drive.google.com/file/d/1legqK4V9nUrY1_m0iKG1-fMGg6Rixjfn/view?usp=sharing) | 20.50 |     0.99     |
+  | [50k LSUN Cat 256x256](https://drive.google.com/file/d/1I9ZFVwK6OKBY945flRaLnf7CAD8Q0Ejo/view?usp=sharing)     | 33.94 |     0.99     |
 
 ## Generation
 - Run, e.g.,
@@ -83,8 +84,8 @@ We experiment on three datasets:
   where
   - `result-dir` contains generated samples in png.
   - `seeds` indicates the random seeds to generated samples. E.g., `0-63` indicates using random seeds 0, ..., 63 to generate 64 samples in total.
-  - `identical-latent` indicates using the same random latent code to generate samples.
-  - `identical-watermark` indicates using the same random watermark (fingerprint) to generate samples.
+  - `identical-latent` indicates using the same random latent code to generate samples or not.
+  - `identical-watermark` indicates using the same random watermark (fingerprint) to generate samples or not.
 
 ## Evaluation
 - Run, e.g.,
