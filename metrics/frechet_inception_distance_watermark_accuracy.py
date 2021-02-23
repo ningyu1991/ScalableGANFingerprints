@@ -49,7 +49,6 @@ class FID_watermark_accuracy(metric_base.MetricBase):
         # Construct TensorFlow graph.
         result_expr_fid = []
         result_expr_accuracy_bid = []
-        result_expr_accuracy_instance = []
         for gpu_idx in range(num_gpus):
             with tf.device('/gpu:%d' % gpu_idx):
                 E_clone = E.clone()
@@ -63,7 +62,6 @@ class FID_watermark_accuracy(metric_base.MetricBase):
                 _, watermark_logits_out = E_clone.get_output_for(images, labels, **Gs_kwargs)
                 watermarks_out = (tf.math.sign(watermark_logits_out) + 1.0) / 2.0
                 result_expr_accuracy_bid.append(tf.reduce_mean(watermarks*watermarks_out + (1.0-watermarks)*(1.0-watermarks_out), axis=1))
-                result_expr_accuracy_instance.append(tf.reduce_min(watermarks*watermarks_out + (1.0-watermarks)*(1.0-watermarks_out), axis=1))
 
         # Calculate statistics for fakes.
         for begin in range(0, self.num_images, minibatch_size):
@@ -71,7 +69,6 @@ class FID_watermark_accuracy(metric_base.MetricBase):
             end = min(begin + minibatch_size, self.num_images)
             activations[begin:end] = np.concatenate(tflib.run(result_expr_fid), axis=0)[:end-begin]
             accuracy_bit[begin:end] = np.concatenate(tflib.run(result_expr_accuracy_bid), axis=0)[:end-begin]
-            accuracy_instance[begin:end] = np.concatenate(tflib.run(result_expr_accuracy_instance), axis=0)[:end-begin]
         mu_fake = np.mean(activations, axis=0)
         sigma_fake = np.cov(activations, rowvar=False)
 
@@ -81,6 +78,5 @@ class FID_watermark_accuracy(metric_base.MetricBase):
         dist = m + np.trace(sigma_fake + sigma_real - 2*s)
         self._report_result(np.real(dist), suffix='_fid')
         self._report_result(np.mean(accuracy_bit), suffix='_watermark_bit_accuracy')
-        self._report_result(np.mean(accuracy_instance), suffix='_watermark_instance_accuracy')
 
 #----------------------------------------------------------------------------
