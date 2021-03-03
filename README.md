@@ -1,7 +1,7 @@
 # Scalable GAN Fingerprints
 
 ### [Responsible Disclosure of Generative Models Using Scalable Fingerprinting](https://arxiv.org/pdf/2012.08726)
-[Ning Yu](https://sites.google.com/site/ningy1991/)\*, [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru)\*, [Dingfan Chen](https://cispa.de/en/people/dingfan.chen), [Larry Davis](http://users.umiacs.umd.edu/~lsd/), [Mario Fritz](https://cispa.saarland/group/fritz/)<br>
+[Ning Yu](https://ningyu1991.github.io/)\*, [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru)\*, [Dingfan Chen](https://cispa.de/en/people/dingfan.chen), [Larry Davis](http://users.umiacs.umd.edu/~lsd/), [Mario Fritz](https://cispa.saarland/group/fritz/)<br>
 arXiv 2021
 
 <img src='fig/teaser.png' width=600>
@@ -109,7 +109,7 @@ We experiment on three datasets:
   ```
 
 ## Acknowledgement
-- [Ning Yu](https://sites.google.com/site/ningy1991/) is patially supported by [Twitch Research Fellowship](https://blog.twitch.tv/en/2021/01/07/introducing-our-2021-twitch-research-fellows/).
+- [Ning Yu](https://ningyu1991.github.io/) is patially supported by [Twitch Research Fellowship](https://blog.twitch.tv/en/2021/01/07/introducing-our-2021-twitch-research-fellows/).
 - [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru) is partially supported by IMPRS scholarship from Max Planck Institute.
 - This work is also supported, in part, by the US Defense Advanced Research Projects Agency (DARPA) Media Forensics (MediFor) Program under FA87501620191 and Semantic Forensics (SemaFor) Program under HR001120C0124. Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the DARPA.
 - We acknowledge the Maryland Advanced Research Computing Center for providing computing resources.
