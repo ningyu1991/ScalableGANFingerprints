@@ -111,9 +111,9 @@ We experiment on three datasets:
   ```
 
 ## Acknowledgement
-- [Ning Yu](https://ningyu1991.github.io/) is patially supported by [Twitch Research Fellowship](https://blog.twitch.tv/en/2021/01/07/introducing-our-2021-twitch-research-fellows/).
-- [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru) is partially supported by IMPRS scholarship from Max Planck Institute.
-- This work is also supported, in part, by the US Defense Advanced Research Projects Agency (DARPA) Media Forensics (MediFor) Program under FA87501620191 and Semantic Forensics (SemaFor) Program under HR001120C0124. Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the DARPA.
+- [Ning Yu](https://ningyu1991.github.io/) was patially supported by [Twitch Research Fellowship](https://blog.twitch.tv/en/2021/01/07/introducing-our-2021-twitch-research-fellows/).
+- [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru) was partially supported by IMPRS scholarship from Max Planck Institute.
+- This work was also supported, in part, by the US Defense Advanced Research Projects Agency (DARPA) Media Forensics (MediFor) Program under FA87501620191 and Semantic Forensics (SemaFor) Program under HR001120C0124. Any opinions, findings, conclusions, or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the DARPA.
 - We acknowledge the Maryland Advanced Research Computing Center for providing computing resources.
 - We thank [David Jacobs](http://www.cs.umd.edu/~djacobs/), [Matthias Zwicker](http://www.cs.umd.edu/~zwicker/), [Abhinav Shrivastava](https://www.cs.umd.edu/~abhinav/), and [Yaser Yacoob](http://users.umiacs.umd.edu/~yaser/) for constructive advice in general.
 - We express gratitudes to the [StyleGAN2 repository](https://github.com/NVlabs/stylegan2) as our code was directly modified from theirs.
