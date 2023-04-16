@@ -4,7 +4,7 @@
 [Ning Yu](https://ningyu1991.github.io/)\*, [Vladislav Skripniuk](https://www.linkedin.com/in/vladislav-skripniuk-8a8891143/?originalSubdomain=ru)\*, [Dingfan Chen](https://cispa.de/en/people/dingfan.chen), [Larry Davis](http://users.umiacs.umd.edu/~lsd/), [Mario Fritz](https://cispa.saarland/group/fritz/)<br>
 ICLR 2022 Spotlight
 
-### [paper](https://arxiv.org/pdf/2012.08726.pdf) | [poster](https://ningyu1991.github.io/homepage_files/poster_ScalableGANFingerprints.pdf) | [video](https://www.youtube.com/watch?v=UlpGtwEof3o)
+### [paper](https://arxiv.org/pdf/2012.08726.pdf) | [project](https://ningyu1991.github.io/projects/ScalableGANFingerprints.html) | [poster](https://ningyu1991.github.io/homepage_files/poster_ScalableGANFingerprints.pdf) | [video](https://www.youtube.com/watch?v=UlpGtwEof3o)
 
 <img src='fig/teaser.png' width=600>
 
